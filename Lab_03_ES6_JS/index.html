@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab 03 — ES6 JavaScript Features</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/global.css" />
+  <style>
+    .hero { text-align: center; padding: 56px 0 20px; }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero h1 .gradient {
+      color: var(--accent);
+    }
+
+    .hero .sub {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      margin-bottom: 2px;
+    }
+
+    .hero .instructor {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 6px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 18px;
+      margin-top: 40px;
+    }
+
+    .t-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px 26px 26px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.28s var(--ease), border-color 0.28s var(--ease), box-shadow 0.28s var(--ease);
+      animation: fadeUp 0.5s var(--ease) forwards;
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .t-card:nth-child(1) { animation-delay: .04s }
+    .t-card:nth-child(2) { animation-delay: .08s }
+    .t-card:nth-child(3) { animation-delay: .12s }
+    .t-card:nth-child(4) { animation-delay: .16s }
+    .t-card:nth-child(5) { animation-delay: .20s }
+    .t-card:nth-child(6) { animation-delay: .24s }
+    .t-card:nth-child(7) { animation-delay: .28s }
+
+    .t-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 4px 20px rgba(26,115,232,0.12);
+    }
+
+    .t-card .num {
+      width: fit-content;
+      padding: 4px 12px;
+      background: #e8f0fe;
+      color: var(--accent);
+      border: 1px solid #d2e3fc;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+
+    .t-card h3 { font-size: 1.1rem; color: var(--text); }
+
+    .t-card p {
+      color: var(--text-muted);
+      font-size: 0.84rem;
+      flex: 1;
+      line-height: 1.5;
+    }
+
+    .t-card .go {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 6px;
+      padding: 9px 20px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.82rem;
+      width: fit-content;
+      transition: all 0.22s var(--ease);
+    }
+
+    .t-card .go:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px var(--accent-glow);
+      color: #fff;
+    }
+
+    .t-card .go svg {
+      width: 14px; height: 14px;
+      transition: transform 0.2s var(--ease);
+    }
+
+    .t-card .go:hover svg { transform: translateX(3px); }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.7rem; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <h1>Lab 03: <span class="gradient">ES6 JavaScript</span></h1>
+      <p class="sub">Full Stack Programming &nbsp;·&nbsp; BSSE-VI-B &nbsp;·&nbsp; M Ehtisham Amjad &nbsp;·&nbsp; Roll No: 231996</p>
+      <p class="instructor">Instructor: Sir Shareef Hussain</p>
+    </section>
+
+    <section class="grid">
+      <div class="t-card">
+        <span class="num">01</span>
+        <h3>Student Management System</h3>
+        <p>ES6 Classes for managing student records with dynamic rendering.</p>
+        <a class="go" href="./task1/index.html">Open Task <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="t-card">
+        <span class="num">02</span>
+        <h3>Online Shopping Cart</h3>
+        <p>Rest &amp; Spread operators with array destructuring for cart logic.</p>
+        <a class="go" href="./task2/index.html">Open Task <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="t-card">
+        <span class="num">03</span>
+        <h3>Asynchronous Data Loader</h3>
+        <p>Promises to simulate async data fetching with loading states.</p>
+        <a class="go" href="./task3/index.html">Open Task <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="t-card">
+        <span class="num">04</span>
+        <h3>Unique Course Registration</h3>
+        <p>JavaScript Set for duplicate-free course registrations.</p>
+        <a class="go" href="./task4/index.html">Open Task <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="t-card">
+        <span class="num">05</span>
+        <h3>Product Catalog (Map)</h3>
+        <p>JavaScript Map for a searchable, dynamic product catalog.</p>
+        <a class="go" href="./task5/index.html">Open Task <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="t-card">
+        <span class="num">06</span>
+        <h3>Mini University Portal</h3>
+        <p>Combining Class, Map, Set &amp; Promise in a unified portal.</p>
+        <a class="go" href="./task6/index.html">Open Task <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="t-card">
+        <span class="num">07</span>
+        <h3>Student Data Using JSON</h3>
+        <p>JSON.stringify, JSON.parse &amp; object destructuring visualized.</p>
+        <a class="go" href="./task7/index.html">Open Task <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      M Ehtisham Amjad · Roll No: 231996 · BSSE-VI-B · Full Stack Programming · Instructor: Sir Shareef Hussain
+    </footer>
+  </div>
+</body>
+</html>

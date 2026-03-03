@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- M Ehtisham Amjad BSSE-VI-B (231996) -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 3 — Simple To‑Do List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="topbar">
+        <a class="backlink" href="../index.html">← Back</a>
+        <div class="topbar__title">
+          <h1 class="page-title">Task 3 — Simple To‑Do List</h1>
+          <p class="muted">Mark tasks complete or remove them.</p>
+        </div>
+        <div class="topbar__meta muted">M Ehtisham Amjad</div>
+      </header>
+
+      <section class="card card--pad-lg" aria-labelledby="todoTitle">
+        <div class="card__header">
+          <h2 id="todoTitle">Today’s tasks</h2>
+          <p class="muted">This list has 3 fixed tasks (as required).</p>
+        </div>
+
+        <div id="todoList" class="stack" role="list">
+          <div class="task" role="listitem" data-task="1" data-status="active">
+            <label class="task__label" for="task1">Task 1</label>
+            <div class="task__row">
+              <input id="task1" type="text" value="Finish Lab 02 (Tasks 1–5)" />
+              <button type="button" class="btn btn--secondary" data-action="complete">
+                Complete
+              </button>
+              <button type="button" class="btn btn--ghost" data-action="remove">
+                Remove
+              </button>
+            </div>
+          </div>
+
+          <div class="task" role="listitem" data-task="2" data-status="active">
+            <label class="task__label" for="task2">Task 2</label>
+            <div class="task__row">
+              <input id="task2" type="text" value="Review DOM manipulation basics" />
+              <button type="button" class="btn btn--secondary" data-action="complete">
+                Complete
+              </button>
+              <button type="button" class="btn btn--ghost" data-action="remove">
+                Remove
+              </button>
+            </div>
+          </div>
+
+          <div class="task" role="listitem" data-task="3" data-status="active">
+            <label class="task__label" for="task3">Task 3</label>
+            <div class="task__row">
+              <input id="task3" type="text" value="Practice functions and conditions" />
+              <button type="button" class="btn btn--secondary" data-action="complete">
+                Complete
+              </button>
+              <button type="button" class="btn btn--ghost" data-action="remove">
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row row--between">
+          <div class="hint muted">
+            Tip: completed tasks are struck-through. Removed tasks are hidden.
+          </div>
+          <button type="button" id="todoResetBtn" class="btn btn--ghost">
+            Reset List
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+

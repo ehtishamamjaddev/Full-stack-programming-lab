@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- M Ehtisham Amjad BSSE-VI-B (231996) -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 4 — Color Box Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="topbar">
+        <a class="backlink" href="../index.html">← Back</a>
+        <div class="topbar__title">
+          <h1 class="page-title">Task 4 — Color Box Generator</h1>
+          <p class="muted">Add color boxes from 3 inputs, then clear all.</p>
+        </div>
+        <div class="topbar__meta muted">M Ehtisham Amjad</div>
+      </header>
+
+      <section class="card card--pad-lg" aria-labelledby="colorTitle">
+        <div class="card__header">
+          <h2 id="colorTitle">Generate color boxes</h2>
+          <p class="muted">
+            Use any valid CSS color (e.g., <code>#2563eb</code>, <code>tomato</code>,
+            <code>rgb(0,0,0)</code>).
+          </p>
+        </div>
+
+        <div class="three-col">
+          <div class="inline-field">
+            <label class="inline-field__label" for="color1">Color 1</label>
+            <div class="inline-field__row">
+              <input id="color1" type="text" placeholder="#2563eb" />
+              <button type="button" id="addColor1Btn" class="btn btn--primary">Add</button>
+            </div>
+          </div>
+
+          <div class="inline-field">
+            <label class="inline-field__label" for="color2">Color 2</label>
+            <div class="inline-field__row">
+              <input id="color2" type="text" placeholder="tomato" />
+              <button type="button" id="addColor2Btn" class="btn btn--primary">Add</button>
+            </div>
+          </div>
+
+          <div class="inline-field">
+            <label class="inline-field__label" for="color3">Color 3</label>
+            <div class="inline-field__row">
+              <input id="color3" type="text" placeholder="rgb(34,197,94)" />
+              <button type="button" id="addColor3Btn" class="btn btn--primary">Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row row--between">
+          <div class="hint muted">Boxes appear below. Use “Clear” to remove all.</div>
+          <button type="button" id="clearColorsBtn" class="btn btn--ghost">Clear boxes</button>
+        </div>
+
+        <div id="colorMessage" class="alert is-hidden" aria-live="polite"></div>
+        <div id="colorBoxes" class="color-grid" aria-label="Generated color boxes"></div>
+
+        <div class="info" aria-label="Browser information">
+          <div class="info__title">BOM info</div>
+          <div class="info__grid">
+            <div class="info__item"><span class="muted">Window</span> <span id="winSize">—</span></div>
+            <div class="info__item"><span class="muted">User agent</span> <span id="ua">—</span></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+

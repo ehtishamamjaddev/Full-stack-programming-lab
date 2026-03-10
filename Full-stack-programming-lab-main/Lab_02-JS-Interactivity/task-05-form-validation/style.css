@@ -1,0 +1,337 @@
+/* M Ehtisham Amjad BSSE-VI-B (231996)
+   Task 5: Form Validation
+   Clean, minimal, product-grade UI (Notion/OpenAI/Cursor/Google-inspired)
+   - Neutral palette + one primary accent
+   - Soft borders/shadows
+   - Strong typography hierarchy
+   - Subtle motion only
+*/
+
+:root {
+  color-scheme: light;
+
+  /* Color system (per brief) */
+  --bg: #f7f7f8;
+  --surface: #ffffff;
+  --surface-2: #fafafa;
+  --border: #e5e7eb;
+  --text: #111827;
+  --muted: #6b7280;
+
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+
+  --success: #16a34a;
+  --error: #dc2626;
+  --warning: #d97706;
+
+  /* Soft tints */
+  --accent-tint: rgba(37, 99, 235, 0.08);
+  --success-tint: rgba(22, 163, 74, 0.08);
+  --error-tint: rgba(220, 38, 38, 0.08);
+  --warning-tint: rgba(217, 119, 6, 0.08);
+
+  /* Shape + elevation (per brief) */
+  --radius: 12px;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+
+  /* 8px spacing scale */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+
+  /* Motion */
+  --t: 0.2s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Subtle page load motion */
+.container {
+  width: min(980px, calc(100% - 32px));
+  margin: var(--space-4) auto 56px;
+  display: grid;
+  gap: var(--space-2);
+  animation: pageFadeIn 240ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .container {
+    animation: none;
+  }
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header h1,
+.page-title {
+  margin: 0 0 6px 0;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.header__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.header__meta {
+  white-space: nowrap;
+}
+
+.muted {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Top bar */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.topbar__title {
+  flex: 1;
+  min-width: 0;
+}
+
+.topbar__meta {
+  white-space: nowrap;
+}
+
+.backlink {
+  text-decoration: none;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  transition: background-color var(--t) ease, border-color var(--t) ease;
+}
+
+.backlink:hover {
+  background: var(--surface-2);
+  border-color: #d1d5db;
+}
+
+.backlink:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Card */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--space-3);
+}
+
+.card--pad-lg {
+  /* keep class, keep consistent padding */
+  padding: var(--space-3);
+}
+
+.card__header {
+  margin-bottom: var(--space-2);
+}
+
+.card h2 {
+  margin: 0 0 6px 0;
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+/* Layout helpers */
+.stack {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.row {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.row--between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hint {
+  font-size: 12px;
+}
+
+/* Buttons */
+.btn {
+  height: 44px;
+  padding: 0 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: background-color var(--t) ease, border-color var(--t) ease,
+    color var(--t) ease;
+}
+
+.btn:hover {
+  background: var(--surface-2);
+  border-color: #d1d5db;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.btn--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.btn--ghost {
+  background: transparent;
+}
+
+.btn:disabled,
+.btn[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Inputs */
+input,
+select {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  transition: border-color var(--t) ease, background-color var(--t) ease;
+}
+
+input:hover,
+select:hover {
+  border-color: #cbd5e1;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+
+/* Task 5: Form validation */
+.form {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.form__grid {
+  display: grid;
+  gap: var(--space-2);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 860px) {
+  .form__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form__field {
+  display: grid;
+  gap: 6px;
+}
+
+.form__field label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.field-error {
+  min-height: 1.1em;
+  font-size: 12px;
+  color: var(--error);
+}
+
+.input-error {
+  border-color: rgba(220, 38, 38, 0.55);
+}
+
+.input-error:focus {
+  outline-color: var(--error);
+  border-color: var(--error);
+}
+
+/* Alerts */
+.alert {
+  margin-top: var(--space-2);
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  font-size: 13px;
+}
+
+.alert.is-hidden {
+  display: none;
+}
+
+.alert[data-type="success"] {
+  background: var(--success-tint);
+  border-color: rgba(22, 163, 74, 0.28);
+}
+
+.alert[data-type="error"] {
+  background: var(--error-tint);
+  border-color: rgba(220, 38, 38, 0.28);
+}
+
+.alert[data-type="warning"] {
+  background: var(--warning-tint);
+  border-color: rgba(217, 119, 6, 0.28);
+}

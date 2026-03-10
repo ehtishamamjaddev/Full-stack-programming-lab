@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2 – Immersive Photo Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <nav class="top-bar">
+        <a href="../index.html" class="back-link">&larr; Dashboard</a>
+        <span class="credit-tag">M Ehtisham Amjad | BSSE-VI-B</span>
+    </nav>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Immersive Photo Gallery</h1>
+            <p class="subtitle">Filter by category &bull; thumbnails &bull; lightbox &bull; keyboard nav</p>
+        </header>
+
+        <!-- Category Filters -->
+        <div class="category-bar">
+            <button class="cat-btn active" data-cat="all">All</button>
+            <button class="cat-btn" data-cat="nature">Nature</button>
+            <button class="cat-btn" data-cat="architecture">Architecture</button>
+            <button class="cat-btn" data-cat="travel">Travel</button>
+            <button class="cat-btn" data-cat="animals">Animals</button>
+        </div>
+
+        <!-- Main Viewer -->
+        <div class="gallery-card">
+            <div class="viewer">
+                <button id="prevBtn" class="arrow-btn left" title="Previous">&#10094;</button>
+                <img id="mainImage" src="" alt="Gallery Image">
+                <button id="nextBtn" class="arrow-btn right" title="Next">&#10095;</button>
+
+                <!-- Image overlay info -->
+                <div class="img-overlay">
+                    <span id="imgTitle" class="img-title"></span>
+                    <span id="imgCounter" class="img-counter"></span>
+                </div>
+            </div>
+
+            <!-- Caption + autoplay -->
+            <div class="caption-bar">
+                <p id="caption" class="caption-text"></p>
+                <div class="caption-actions">
+                    <button id="fullscreenBtn" class="action-btn" title="Lightbox">&#9974; Expand</button>
+                </div>
+            </div>
+
+            <!-- Thumbnail Strip -->
+            <div class="thumb-strip" id="thumbStrip"></div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <div class="lb-overlay"></div>
+        <button class="lb-close" title="Close">&times;</button>
+        <button class="lb-arrow lb-prev" title="Previous">&#10094;</button>
+        <img id="lbImage" class="lb-image" src="" alt="">
+        <button class="lb-arrow lb-next" title="Next">&#10095;</button>
+        <p id="lbCaption" class="lb-caption"></p>
+    </div>
+
+    <!-- Credits Footer -->
+    <footer class="page-footer">
+        <p>&copy; 2026 <strong>M Ehtisham Amjad</strong> | Full Stack Programming | BSSE-VI-B (231996) | Air University</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

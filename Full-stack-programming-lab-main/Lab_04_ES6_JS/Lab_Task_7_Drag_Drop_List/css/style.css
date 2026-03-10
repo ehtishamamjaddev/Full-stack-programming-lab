@@ -1,0 +1,202 @@
+/* ========================================
+   Task 7 – Drag and Drop Sortable List
+   Teal professional theme
+   M Ehtisham Amjad | BSSE-VI-B | 231996
+   ======================================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, sans-serif;
+    background-color: #f0f2f5;
+    color: #1e293b;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 28px 20px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 860px;
+}
+
+/* Top Bar */
+.top-bar {
+    width: 100%;
+    max-width: 860px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.back-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: #0f766e;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.back-link:hover { color: #0d635c; }
+
+.credit-tag {
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e293b;
+    letter-spacing: -0.3px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 6px;
+}
+
+/* Content Grid */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Cards */
+.list-card,
+.order-card {
+    background: #fff;
+    border: 1px solid #d8dee4;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 16px;
+}
+
+/* Sortable List */
+.sortable-list {
+    list-style: none;
+}
+
+.sortable-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    background: #f0f2f5;
+    border: 1px solid #d8dee4;
+    border-radius: 8px;
+    cursor: grab;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    user-select: none;
+}
+
+.sortable-item:last-child {
+    margin-bottom: 0;
+}
+
+.sortable-item:hover {
+    background-color: #ecfdf5;
+    border-color: #a7f3d0;
+}
+
+/* Dragging state */
+.sortable-item.ui-sortable-helper {
+    background: #fff;
+    border-color: #0f766e;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    cursor: grabbing;
+    transform: scale(1.02);
+}
+
+/* Placeholder */
+.sortable-placeholder {
+    height: 48px;
+    margin-bottom: 8px;
+    background: #ecfdf5;
+    border: 2px dashed #0f766e;
+    border-radius: 8px;
+    visibility: visible !important;
+}
+
+/* Drag Handle */
+.drag-handle {
+    font-size: 14px;
+    color: #94a3b8;
+    flex-shrink: 0;
+}
+
+/* Item Label */
+.item-label {
+    font-size: 14px;
+    color: #1e293b;
+    font-weight: 500;
+}
+
+/* Order Display */
+.order-list {
+    padding-left: 20px;
+}
+
+.order-list li {
+    padding: 8px 0;
+    font-size: 14px;
+    color: #475569;
+    border-bottom: 1px solid #e2e8f0;
+    transition: background-color 0.2s ease;
+}
+
+.order-list li:last-child {
+    border-bottom: none;
+}
+
+/* Credits Footer */
+.page-footer {
+    width: 100%;
+    max-width: 860px;
+    text-align: center;
+    padding: 20px 4px 0;
+    margin-top: 32px;
+    border-top: 1px solid #d8dee4;
+}
+
+.page-footer p { font-size: 12px; color: #64748b; }
+.page-footer strong { color: #1e293b; }
+
+/* Responsive */
+@media (max-width: 600px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+}

@@ -7,6 +7,7 @@ function App() {
   return (
     <div className="app-container">
       <h1 className="app-heading">Student Information Cards</h1>
+      <p className="app-subtitle">Lab 05 — Task 1: Components &amp; Props</p>
       <div className="cards-container">
         {students.map((student, index) => (
           <StudentCard

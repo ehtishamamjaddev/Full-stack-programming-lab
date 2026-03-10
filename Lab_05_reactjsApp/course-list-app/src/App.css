@@ -6,20 +6,29 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f1f5f9;
+  background-color: #f0f4f8;
+  min-height: 100vh;
 }
 
 .app-container {
-  max-width: 750px;
+  max-width: 620px;
   margin: 0 auto;
-  padding: 30px 20px;
+  padding: 40px 20px 30px;
 }
 
 .app-heading {
   text-align: center;
-  font-size: 2rem;
-  color: #1e293b;
-  margin-bottom: 25px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.app-subtitle {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #64748b;
+  margin-bottom: 30px;
 }
 
 .courses-container {
@@ -29,11 +38,17 @@ body {
 
 .app-footer {
   text-align: center;
-  margin-top: 40px;
-  padding: 20px;
-  background-color: #1e293b;
-  color: #cbd5e1;
-  border-radius: 10px;
-  font-size: 0.85rem;
-  line-height: 1.7;
+  margin-top: 45px;
+  padding: 22px 20px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #94a3b8;
+  border-radius: 14px;
+  font-size: 0.82rem;
+  line-height: 1.8;
+}
+
+.app-footer p:first-child {
+  color: #e2e8f0;
+  font-weight: 600;
+  font-size: 0.9rem;
 }

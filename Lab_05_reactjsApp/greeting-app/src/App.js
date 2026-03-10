@@ -7,6 +7,7 @@ function App() {
   return (
     <div className="app-container">
       <h1 className="app-heading">Daily Greetings</h1>
+      <p className="app-subtitle">Lab 05 \u2014 Task 3: Props &amp; Conditional Rendering</p>
       <div className="greetings-container">
         {greetings.map((greeting, index) => (
           <Greeting

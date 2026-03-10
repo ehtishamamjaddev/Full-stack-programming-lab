@@ -7,10 +7,12 @@ function App() {
   return (
     <div className="app-container">
       <h1 className="app-heading">Course List</h1>
+      <p className="app-subtitle">Lab 05 \u2014 Task 2: Rendering Lists with Props</p>
       <div className="courses-container">
         {courses.map((course, index) => (
           <CourseItem
             key={index}
+            index={index + 1}
             courseName={course.courseName}
             instructor={course.instructor}
             duration={course.duration}

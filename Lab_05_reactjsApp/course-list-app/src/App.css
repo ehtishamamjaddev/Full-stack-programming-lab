@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f1f5f9;
+}
+
+.app-container {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.app-heading {
+  text-align: center;
+  font-size: 2rem;
+  color: #1e293b;
+  margin-bottom: 25px;
+}
+
+.courses-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #1e293b;
+  color: #cbd5e1;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}

@@ -30,11 +30,16 @@ function Navbar() {
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
           aria-controls="main-navigation"
+          aria-haspopup="true"
         >
           {open ? <FiX /> : <FiMenu />}
         </button>
 
-        <nav id="main-navigation" className={`${styles.nav} ${open ? styles.open : ''}`}>
+        <nav
+          id="main-navigation"
+          aria-label="Primary navigation"
+          className={`${styles.nav} ${open ? styles.open : ''}`}
+        >
           {links.map((item) => (
             <NavLink
               key={item.to}

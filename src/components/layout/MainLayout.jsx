@@ -12,9 +12,9 @@ function MainLayout({ children }) {
         Skip to main content
       </a>
       <Navbar />
-      <div id="main-content" className={styles.mainArea} key={location.pathname}>
+      <main id="main-content" tabIndex="-1" className={styles.mainArea} key={location.pathname}>
         {children}
-      </div>
+      </main>
       <Footer />
     </div>
   );

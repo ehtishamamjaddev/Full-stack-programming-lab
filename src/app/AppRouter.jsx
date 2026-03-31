@@ -11,6 +11,13 @@ import RegisterPage from '../pages/RegisterPage';
 import AboutPage from '../pages/AboutPage';
 import ContactPage from '../pages/ContactPage';
 import NotFoundPage from '../pages/NotFoundPage';
+import EditBillingAddressPage from '../pages/EditBillingAddressPage';
+import EditShippingAddressPage from '../pages/EditShippingAddressPage';
+import ForgotPasswordPage from '../pages/ForgotPasswordPage';
+import EditAccountPage from '../pages/EditAccountPage';
+import OrderDetailsPage from '../pages/OrderDetailsPage';
+import OrderSummaryPage from '../pages/OrderSummaryPage';
+import TermsAndConditionsPage from '../pages/TermsAndConditionsPage';
 
 function AppRouter() {
   const location = useLocation();
@@ -24,10 +31,17 @@ function AppRouter() {
         <Route path="/cart" element={<CartPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/account" element={<AccountPage />} />
+        <Route path="/edit-account" element={<EditAccountPage />} />
+        <Route path="/edit-billing-address" element={<EditBillingAddressPage />} />
+        <Route path="/edit-shipping-address" element={<EditShippingAddressPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/orders" element={<OrderSummaryPage />} />
+        <Route path="/order/:orderId" element={<OrderDetailsPage />} />
+        <Route path="/terms" element={<TermsAndConditionsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </AnimatePresence>

@@ -4,8 +4,11 @@ import PageTransition from '../components/common/PageTransition';
 import CartItem from '../components/shop/CartItem';
 import usePageTitle from '../hooks/usePageTitle';
 import { cartSubtotalSelector, useCartStore } from '../store/cartStore';
+import { formatPKR } from '../utils/formatters';
 import styles from './CartPage.module.css';
 import pageStyles from './Page.module.css';
+
+const DELIVERY_FEE = 25000;
 
 function CartPage() {
   usePageTitle('Cart');
@@ -43,15 +46,15 @@ function CartPage() {
             <aside className={styles.summary}>
               <p>
                 <span>Subtotal</span>
-                <strong>${subtotal.toFixed(2)}</strong>
+                <strong>{formatPKR(subtotal)}</strong>
               </p>
               <p>
                 <span>Estimated Shipping</span>
-                <span>$79.00</span>
+                <span>{formatPKR(DELIVERY_FEE)}</span>
               </p>
               <p>
                 <span>Total</span>
-                <strong>${(subtotal + 79).toFixed(2)}</strong>
+                <strong>{formatPKR(subtotal + DELIVERY_FEE)}</strong>
               </p>
               <Link to="/checkout">
                 <Button>Proceed to Checkout</Button>

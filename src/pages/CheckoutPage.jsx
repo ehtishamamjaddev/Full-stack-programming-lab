@@ -4,9 +4,12 @@ import Button from '../components/common/Button';
 import PageTransition from '../components/common/PageTransition';
 import usePageTitle from '../hooks/usePageTitle';
 import { cartSubtotalSelector, useCartStore } from '../store/cartStore';
+import { formatPKR } from '../utils/formatters';
 import { checkoutSchema } from '../utils/validationSchemas';
 import styles from './CheckoutPage.module.css';
 import pageStyles from './Page.module.css';
+
+const DELIVERY_FEE = 25000;
 
 function CheckoutPage() {
   usePageTitle('Checkout');
@@ -123,10 +126,10 @@ function CheckoutPage() {
           <aside className={styles.box}>
             <h2>Order Summary</h2>
             <p>{items.length} item(s)</p>
-            <p>Subtotal: ${subtotal.toFixed(2)}</p>
-            <p>Delivery: $79.00</p>
+            <p>Subtotal: {formatPKR(subtotal)}</p>
+            <p>Delivery: {formatPKR(DELIVERY_FEE)}</p>
             <p>
-              <strong>Total: ${(subtotal + 79).toFixed(2)}</strong>
+              <strong>Total: {formatPKR(subtotal + DELIVERY_FEE)}</strong>
             </p>
           </aside>
         </div>

@@ -5,6 +5,7 @@ import { useWishlistStore } from '../../store/wishlistStore';
 import { useCartStore } from '../../store/cartStore';
 import Button from '../common/Button';
 import SafeImage from '../common/SafeImage';
+import { formatPKR } from '../../utils/formatters';
 import styles from './ProductCard.module.css';
 
 function ProductCard({ product, index = 0 }) {
@@ -31,7 +32,7 @@ function ProductCard({ product, index = 0 }) {
       <div className={styles.body}>
         <div className={styles.row}>
           <h3>{product.name}</h3>
-          <p className={styles.price}>${product.price}</p>
+          <p className={styles.price}>{formatPKR(product.price)}</p>
         </div>
         <p className={styles.copy}>{product.short}</p>
         <p className={styles.meta}>

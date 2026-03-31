@@ -7,6 +7,7 @@ import SafeImage from '../components/common/SafeImage';
 import { products } from '../data/products';
 import { useCartStore } from '../store/cartStore';
 import usePageTitle from '../hooks/usePageTitle';
+import { formatPKR } from '../utils/formatters';
 import styles from './ProductDetailPage.module.css';
 import pageStyles from './Page.module.css';
 
@@ -44,7 +45,7 @@ function ProductDetailPage() {
             <p>
               <FiStar /> {product.rating} Rating | {product.seats} Seats
             </p>
-            <p className={styles.price}>${product.price}</p>
+            <p className={styles.price}>{formatPKR(product.price)}</p>
             <Button
               onClick={() => {
                 addToCart(product);

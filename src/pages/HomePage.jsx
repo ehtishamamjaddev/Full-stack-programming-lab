@@ -56,7 +56,7 @@ function HomePage() {
 
         <section style={{ marginTop: '1.2rem' }}>
           <h2 className="section-title">Popular Picks</h2>
-          <ProductGrid products={products.slice(0, 3)} />
+          <ProductGrid products={products.slice(0, 4)} />
         </section>
       </section>
     </PageTransition>

@@ -1,0 +1,31 @@
+.layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 1rem;
+}
+
+.hero {
+  border-radius: 15px;
+  min-height: 330px;
+  object-fit: cover;
+}
+
+.side h1 {
+  margin: 0;
+}
+
+.side p {
+  color: var(--clr-muted);
+}
+
+.price {
+  font-size: 1.6rem;
+  color: var(--clr-navy);
+  font-weight: 700;
+}
+
+@media (max-width: 880px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

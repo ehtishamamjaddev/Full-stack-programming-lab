@@ -26,21 +26,56 @@ function ContactPage() {
             }}
           >
             {({ values, touched, errors, handleChange }) => (
-              <Form>
+              <Form noValidate aria-label="Contact form">
                 <label className={styles.field}>
                   Name
-                  <input name="name" value={values.name} onChange={handleChange} />
-                  {touched.name && errors.name && <span className={styles.error}>{errors.name}</span>}
+                  <input
+                    id="contact-name"
+                    name="name"
+                    value={values.name}
+                    onChange={handleChange}
+                    aria-invalid={Boolean(touched.name && errors.name)}
+                    aria-describedby={touched.name && errors.name ? 'contact-name-error' : undefined}
+                  />
+                  {touched.name && errors.name && (
+                    <span id="contact-name-error" role="alert" className={styles.error}>
+                      {errors.name}
+                    </span>
+                  )}
                 </label>
                 <label className={styles.field}>
                   Email
-                  <input name="email" type="email" value={values.email} onChange={handleChange} />
-                  {touched.email && errors.email && <span className={styles.error}>{errors.email}</span>}
+                  <input
+                    id="contact-email"
+                    name="email"
+                    type="email"
+                    value={values.email}
+                    onChange={handleChange}
+                    aria-invalid={Boolean(touched.email && errors.email)}
+                    aria-describedby={touched.email && errors.email ? 'contact-email-error' : undefined}
+                  />
+                  {touched.email && errors.email && (
+                    <span id="contact-email-error" role="alert" className={styles.error}>
+                      {errors.email}
+                    </span>
+                  )}
                 </label>
                 <label className={styles.field}>
                   Message
-                  <textarea rows="5" name="message" value={values.message} onChange={handleChange} />
-                  {touched.message && errors.message && <span className={styles.error}>{errors.message}</span>}
+                  <textarea
+                    id="contact-message"
+                    rows="5"
+                    name="message"
+                    value={values.message}
+                    onChange={handleChange}
+                    aria-invalid={Boolean(touched.message && errors.message)}
+                    aria-describedby={touched.message && errors.message ? 'contact-message-error' : undefined}
+                  />
+                  {touched.message && errors.message && (
+                    <span id="contact-message-error" role="alert" className={styles.error}>
+                      {errors.message}
+                    </span>
+                  )}
                 </label>
                 <Button type="submit">Send Message</Button>
               </Form>

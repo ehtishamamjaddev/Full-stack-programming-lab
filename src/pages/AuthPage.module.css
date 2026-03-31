@@ -21,9 +21,16 @@
   padding: 0.72rem 0.78rem;
 }
 
+.field input[aria-invalid='true'],
+.field textarea[aria-invalid='true'] {
+  border-color: #be2f2f;
+  box-shadow: 0 0 0 1px rgba(190, 47, 47, 0.1);
+}
+
 .error {
   color: #be2f2f;
   font-size: 0.82rem;
+  font-weight: 500;
 }
 
 .meta {

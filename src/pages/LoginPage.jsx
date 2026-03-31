@@ -30,16 +30,40 @@ function LoginPage() {
             }}
           >
             {({ values, touched, errors, handleChange }) => (
-              <Form>
+              <Form noValidate aria-label="Login form">
                 <label className={styles.field}>
                   Email
-                  <input name="email" type="email" value={values.email} onChange={handleChange} />
-                  {touched.email && errors.email && <span className={styles.error}>{errors.email}</span>}
+                  <input
+                    id="login-email"
+                    name="email"
+                    type="email"
+                    value={values.email}
+                    onChange={handleChange}
+                    aria-invalid={Boolean(touched.email && errors.email)}
+                    aria-describedby={touched.email && errors.email ? 'login-email-error' : undefined}
+                  />
+                  {touched.email && errors.email && (
+                    <span id="login-email-error" role="alert" className={styles.error}>
+                      {errors.email}
+                    </span>
+                  )}
                 </label>
                 <label className={styles.field}>
                   Password
-                  <input name="password" type="password" value={values.password} onChange={handleChange} />
-                  {touched.password && errors.password && <span className={styles.error}>{errors.password}</span>}
+                  <input
+                    id="login-password"
+                    name="password"
+                    type="password"
+                    value={values.password}
+                    onChange={handleChange}
+                    aria-invalid={Boolean(touched.password && errors.password)}
+                    aria-describedby={touched.password && errors.password ? 'login-password-error' : undefined}
+                  />
+                  {touched.password && errors.password && (
+                    <span id="login-password-error" role="alert" className={styles.error}>
+                      {errors.password}
+                    </span>
+                  )}
                 </label>
                 <Button type="submit">Login</Button>
               </Form>

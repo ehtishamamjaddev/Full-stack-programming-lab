@@ -1,12 +1,14 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 function PageTransition({ children }) {
+  const reducedMotion = useReducedMotion();
+
   return (
     <motion.main
-      initial={{ opacity: 0, y: 22 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.28, ease: 'easeOut' }}
+      initial={reducedMotion ? { opacity: 0 } : { opacity: 0, y: 22 }}
+      animate={reducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+      exit={reducedMotion ? { opacity: 0 } : { opacity: 0, y: -20 }}
+      transition={{ duration: reducedMotion ? 0.12 : 0.28, ease: 'easeOut' }}
     >
       {children}
     </motion.main>

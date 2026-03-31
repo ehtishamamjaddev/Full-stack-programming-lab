@@ -44,28 +44,75 @@ function CheckoutPage() {
               }}
             >
               {({ values, errors, touched, handleChange }) => (
-                <Form>
+                <Form noValidate aria-label="Checkout form">
                   <div className={styles.row}>
                     <label className={styles.field}>
                       Full Name
-                      <input name="fullName" value={values.fullName} onChange={handleChange} />
-                      {touched.fullName && errors.fullName && <span className={styles.err}>{errors.fullName}</span>}
+                      <input
+                        id="checkout-fullName"
+                        name="fullName"
+                        value={values.fullName}
+                        onChange={handleChange}
+                        aria-invalid={Boolean(touched.fullName && errors.fullName)}
+                        aria-describedby={
+                          touched.fullName && errors.fullName ? 'checkout-fullName-error' : undefined
+                        }
+                      />
+                      {touched.fullName && errors.fullName && (
+                        <span id="checkout-fullName-error" role="alert" className={styles.err}>
+                          {errors.fullName}
+                        </span>
+                      )}
                     </label>
                     <label className={styles.field}>
                       Phone
-                      <input name="phone" value={values.phone} onChange={handleChange} />
-                      {touched.phone && errors.phone && <span className={styles.err}>{errors.phone}</span>}
+                      <input
+                        id="checkout-phone"
+                        name="phone"
+                        value={values.phone}
+                        onChange={handleChange}
+                        aria-invalid={Boolean(touched.phone && errors.phone)}
+                        aria-describedby={touched.phone && errors.phone ? 'checkout-phone-error' : undefined}
+                      />
+                      {touched.phone && errors.phone && (
+                        <span id="checkout-phone-error" role="alert" className={styles.err}>
+                          {errors.phone}
+                        </span>
+                      )}
                     </label>
                   </div>
                   <label className={styles.field}>
                     City
-                    <input name="city" value={values.city} onChange={handleChange} />
-                    {touched.city && errors.city && <span className={styles.err}>{errors.city}</span>}
+                    <input
+                      id="checkout-city"
+                      name="city"
+                      value={values.city}
+                      onChange={handleChange}
+                      aria-invalid={Boolean(touched.city && errors.city)}
+                      aria-describedby={touched.city && errors.city ? 'checkout-city-error' : undefined}
+                    />
+                    {touched.city && errors.city && (
+                      <span id="checkout-city-error" role="alert" className={styles.err}>
+                        {errors.city}
+                      </span>
+                    )}
                   </label>
                   <label className={styles.field}>
                     Delivery Address
-                    <textarea rows="4" name="address" value={values.address} onChange={handleChange} />
-                    {touched.address && errors.address && <span className={styles.err}>{errors.address}</span>}
+                    <textarea
+                      id="checkout-address"
+                      rows="4"
+                      name="address"
+                      value={values.address}
+                      onChange={handleChange}
+                      aria-invalid={Boolean(touched.address && errors.address)}
+                      aria-describedby={touched.address && errors.address ? 'checkout-address-error' : undefined}
+                    />
+                    {touched.address && errors.address && (
+                      <span id="checkout-address-error" role="alert" className={styles.err}>
+                        {errors.address}
+                      </span>
+                    )}
                   </label>
                   <Button type="submit">Place Order</Button>
                 </Form>

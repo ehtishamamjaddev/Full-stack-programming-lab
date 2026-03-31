@@ -1,11 +1,12 @@
 import { FiTrash2 } from 'react-icons/fi';
 import QuantityPicker from './QuantityPicker';
+import SafeImage from '../common/SafeImage';
 import styles from './CartItem.module.css';
 
 function CartItem({ item, onQty, onRemove }) {
   return (
     <article className={styles.item}>
-      <img src={item.image} alt={item.name} className={styles.thumb} />
+      <SafeImage src={item.image} alt={item.name} className={styles.thumb} />
       <div className={styles.info}>
         <h3>{item.name}</h3>
         <p>${item.price} each</p>

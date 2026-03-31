@@ -4,6 +4,7 @@ import { FiHeart, FiShoppingBag, FiUsers } from 'react-icons/fi';
 import { useWishlistStore } from '../../store/wishlistStore';
 import { useCartStore } from '../../store/cartStore';
 import Button from '../common/Button';
+import SafeImage from '../common/SafeImage';
 import styles from './ProductCard.module.css';
 
 function ProductCard({ product, index = 0 }) {
@@ -19,7 +20,7 @@ function ProductCard({ product, index = 0 }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.08, duration: 0.2 }}
     >
-      <img src={product.image} alt={product.name} className={styles.cover} loading="lazy" />
+      <SafeImage src={product.image} alt={product.name} className={styles.cover} loading="lazy" />
       <button
         className={`${styles.heart} ${active ? styles.hearted : ''}`}
         onClick={() => toggleWishlist(product.id)}

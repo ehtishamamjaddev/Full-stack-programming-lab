@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Button from '../components/common/Button';
+import SafeImage from '../components/common/SafeImage';
 import PageTransition from '../components/common/PageTransition';
 import ProductGrid from '../components/shop/ProductGrid';
 import { products } from '../data/products';
@@ -30,10 +31,11 @@ function HomePage() {
               </Link>
             </div>
           </div>
-          <img
+          <SafeImage
             className={styles.heroImg}
             src="https://images.unsplash.com/photo-1600566752227-8f3272eacd1f?auto=format&fit=crop&w=1400&q=80"
             alt="Luxury hot tub setup in outdoor deck"
+            loading="eager"
           />
         </div>
 

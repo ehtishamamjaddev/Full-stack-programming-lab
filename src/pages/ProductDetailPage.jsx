@@ -3,6 +3,7 @@ import { FiShoppingBag, FiStar } from 'react-icons/fi';
 import { toast } from 'react-toastify';
 import Button from '../components/common/Button';
 import PageTransition from '../components/common/PageTransition';
+import SafeImage from '../components/common/SafeImage';
 import { products } from '../data/products';
 import { useCartStore } from '../store/cartStore';
 import usePageTitle from '../hooks/usePageTitle';
@@ -34,7 +35,7 @@ function ProductDetailPage() {
     <PageTransition>
       <section className={`container ${pageStyles.page}`}>
         <div className={styles.layout}>
-          <img src={product.image} alt={product.name} className={styles.hero} />
+          <SafeImage src={product.image} alt={product.name} className={styles.hero} />
 
           <article className={`${styles.side} ${pageStyles.card}`}>
             <span className="kicker">{product.category}</span>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4 – Interactive Dashboard Tabs</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <nav class="top-bar">
+        <a href="../index.html" class="back-link">&larr; Dashboard</a>
+        <span class="credit-tag">M Ehtisham Amjad | BSSE-VI-B</span>
+    </nav>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Interactive Dashboard</h1>
+            <p class="subtitle">Tabbed sections with animated counters, progress bars &amp; keyboard nav</p>
+        </header>
+
+        <!-- Tab Navigation with sliding indicator -->
+        <nav class="tab-nav" id="tabNav">
+            <button class="tab-btn active" data-tab="overview">Overview</button>
+            <button class="tab-btn" data-tab="analytics">Analytics</button>
+            <button class="tab-btn" data-tab="team">Team</button>
+            <button class="tab-btn" data-tab="activity">Activity</button>
+            <button class="tab-btn" data-tab="settings">Settings</button>
+            <div class="tab-indicator" id="tabIndicator"></div>
+        </nav>
+
+        <!-- Tab Content Panels -->
+        <div class="tab-content-wrapper" id="contentArea">
+
+            <!-- ===== Overview ===== -->
+            <div class="tab-panel active" id="panel-overview">
+                <h2>Project Overview</h2>
+                <p>Track key metrics across the entire platform. All data updates in real-time through our intelligent monitoring system built by <strong>Ehtisham Amjad</strong> and team.</p>
+
+                <div class="stat-cards">
+                    <div class="stat-card">
+                        <span class="stat-label">Total Users</span>
+                        <span class="stat-number" data-target="12847">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Revenue</span>
+                        <span class="stat-number" data-target="48290" data-prefix="$">$0</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Active Now</span>
+                        <span class="stat-number" data-target="342">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Projects</span>
+                        <span class="stat-number" data-target="89">0</span>
+                    </div>
+                </div>
+
+                <div class="chart-placeholder">
+                    <div class="mini-bars">
+                        <div class="bar" style="--h:40%"></div>
+                        <div class="bar" style="--h:65%"></div>
+                        <div class="bar" style="--h:50%"></div>
+                        <div class="bar" style="--h:80%"></div>
+                        <div class="bar" style="--h:55%"></div>
+                        <div class="bar" style="--h:90%"></div>
+                        <div class="bar" style="--h:70%"></div>
+                    </div>
+                    <p class="chart-label">Weekly Performance</p>
+                </div>
+            </div>
+
+            <!-- ===== Analytics ===== -->
+            <div class="tab-panel" id="panel-analytics">
+                <h2>Analytics</h2>
+                <p>Detailed progress breakdown across key performance areas.</p>
+
+                <div class="progress-list">
+                    <div class="progress-item">
+                        <div class="prog-header"><span>User Engagement</span><span class="prog-val" data-target="87">0%</span></div>
+                        <div class="prog-track"><div class="prog-fill" data-width="87"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="prog-header"><span>Conversion Rate</span><span class="prog-val" data-target="64">0%</span></div>
+                        <div class="prog-track"><div class="prog-fill" data-width="64"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="prog-header"><span>Customer Satisfaction</span><span class="prog-val" data-target="92">0%</span></div>
+                        <div class="prog-track"><div class="prog-fill" data-width="92"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="prog-header"><span>Server Uptime</span><span class="prog-val" data-target="99">0%</span></div>
+                        <div class="prog-track"><div class="prog-fill" data-width="99"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="prog-header"><span>Bug Resolution</span><span class="prog-val" data-target="73">0%</span></div>
+                        <div class="prog-track"><div class="prog-fill" data-width="73"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Team ===== -->
+            <div class="tab-panel" id="panel-team">
+                <h2>Our Team</h2>
+                <p>The talented engineers behind this platform.</p>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-avatar" style="background:#0f766e">EA</div>
+                        <strong>Ehtisham Amjad</strong>
+                        <span class="team-role">Lead Developer</span>
+                        <div class="team-bar"><div class="team-fill" data-width="95"></div></div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar" style="background:#6366f1">IZ</div>
+                        <strong>Izah</strong>
+                        <span class="team-role">UI/UX Designer</span>
+                        <div class="team-bar"><div class="team-fill" data-width="88"></div></div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar" style="background:#ea580c">US</div>
+                        <strong>Usman</strong>
+                        <span class="team-role">Backend Developer</span>
+                        <div class="team-bar"><div class="team-fill" data-width="82"></div></div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar" style="background:#0284c7">SH</div>
+                        <strong>Shareef</strong>
+                        <span class="team-role">Frontend Developer</span>
+                        <div class="team-bar"><div class="team-fill" data-width="79"></div></div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar" style="background:#dc2626">HU</div>
+                        <strong>Hussain</strong>
+                        <span class="team-role">QA Engineer</span>
+                        <div class="team-bar"><div class="team-fill" data-width="85"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Activity ===== -->
+            <div class="tab-panel" id="panel-activity">
+                <h2>Recent Activity</h2>
+                <p>Live feed of platform events.</p>
+                <ul class="activity-feed" id="activityFeed">
+                    <li class="feed-item">
+                        <div class="feed-dot"></div>
+                        <div class="feed-body"><strong>Ehtisham</strong> deployed v2.4.1 to production <span class="feed-time">2 min ago</span></div>
+                    </li>
+                    <li class="feed-item">
+                        <div class="feed-dot new"></div>
+                        <div class="feed-body"><strong>Izah</strong> updated the design system <span class="feed-time">18 min ago</span></div>
+                    </li>
+                    <li class="feed-item">
+                        <div class="feed-dot"></div>
+                        <div class="feed-body"><strong>Usman</strong> fixed API rate-limiter bug <span class="feed-time">1 hr ago</span></div>
+                    </li>
+                    <li class="feed-item">
+                        <div class="feed-dot"></div>
+                        <div class="feed-body"><strong>Shareef</strong> created pull request #214 <span class="feed-time">3 hrs ago</span></div>
+                    </li>
+                    <li class="feed-item">
+                        <div class="feed-dot"></div>
+                        <div class="feed-body"><strong>Hussain</strong> completed regression testing <span class="feed-time">5 hrs ago</span></div>
+                    </li>
+                </ul>
+                <button id="loadMoreActivity" class="load-more-btn">Load Older Activity</button>
+            </div>
+
+            <!-- ===== Settings ===== -->
+            <div class="tab-panel" id="panel-settings">
+                <h2>Settings</h2>
+                <p>Configure your dashboard preferences below.</p>
+                <div class="settings-list">
+                    <div class="setting-row">
+                        <div><strong>Dark Mode</strong><p>Switch to dark theme</p></div>
+                        <label class="toggle"><input type="checkbox" id="darkToggle"><span class="slider"></span></label>
+                    </div>
+                    <div class="setting-row">
+                        <div><strong>Email Notifications</strong><p>Receive updates via email</p></div>
+                        <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+                    </div>
+                    <div class="setting-row">
+                        <div><strong>Auto-Refresh Data</strong><p>Refresh stats every 30 seconds</p></div>
+                        <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+                    </div>
+                    <div class="setting-row">
+                        <div><strong>Compact View</strong><p>Reduce visual spacing</p></div>
+                        <label class="toggle"><input type="checkbox"><span class="slider"></span></label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Keyboard hint -->
+        <p class="kbd-hint">Tip: Use <kbd>&larr;</kbd> <kbd>&rarr;</kbd> arrow keys to switch tabs</p>
+    </div>
+
+    <!-- Credits Footer -->
+    <footer class="page-footer">
+        <p>&copy; 2026 <strong>M Ehtisham Amjad</strong> | Full Stack Programming | BSSE-VI-B (231996) | Air University</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 1.5rem;
+}
+
+.app-shell h1 {
+  margin: 0;
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  letter-spacing: -0.01em;
+}
+
+.counter-card {
+  width: min(480px, 100%);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  padding: 2rem;
+  text-align: center;
+}
+
+.label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.count {
+  margin: 0.35rem 0 1.6rem;
+  font-size: clamp(2.6rem, 8vw, 4.2rem);
+  font-weight: 700;
+  color: var(--text);
+  transition: transform 0.2s ease;
+}
+
+.button-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.7rem;
+}
+
+.btn {
+  border: 1px solid var(--border);
+  background: #f8fafc;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: #bfdbfe;
+  background: #eff6ff;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-reset {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.btn-reset:hover:not(:disabled) {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+}
+
+@media (max-width: 520px) {
+  .counter-card {
+    padding: 1.3rem;
+  }
+
+  .button-row {
+    grid-template-columns: 1fr;
+  }
+}

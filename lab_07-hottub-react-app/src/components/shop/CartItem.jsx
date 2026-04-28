@@ -1,0 +1,24 @@
+import { FiTrash2 } from 'react-icons/fi';
+import QuantityPicker from './QuantityPicker';
+import SafeImage from '../common/SafeImage';
+import { formatPKR } from '../../utils/formatters';
+import styles from './CartItem.module.css';
+
+function CartItem({ item, onQty, onRemove }) {
+  return (
+    <article className={styles.item}>
+      <SafeImage src={item.image} alt={item.name} className={styles.thumb} />
+      <div className={styles.info}>
+        <h3>{item.name}</h3>
+        <p>{formatPKR(item.price)} each</p>
+      </div>
+      <QuantityPicker value={item.qty} onChange={(qty) => onQty(item.id, qty)} />
+      <p className={styles.total}>{formatPKR(item.qty * item.price)}</p>
+      <button className={styles.remove} onClick={() => onRemove(item.id)} aria-label={`Remove ${item.name}`}>
+        <FiTrash2 />
+      </button>
+    </article>
+  );
+}
+
+export default CartItem;

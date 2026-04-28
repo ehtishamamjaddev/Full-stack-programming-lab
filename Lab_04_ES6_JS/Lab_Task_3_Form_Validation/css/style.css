@@ -1,0 +1,122 @@
+/* ========================================
+   Task 3 – Multi-Step Registration Wizard
+   Teal theme · step indicators · pw rules
+   M Ehtisham Amjad | BSSE-VI-B | 231996
+   ======================================== */
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;background:#f0f2f5;color:#1e293b;line-height:1.6;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:28px 20px 20px}
+
+.container{width:100%;max-width:560px}
+
+/* Top Bar */
+.top-bar{width:100%;max-width:560px;display:flex;justify-content:space-between;align-items:center;padding-bottom:20px}
+.back-link{font-size:14px;font-weight:500;color:#0f766e;text-decoration:none;transition:color .2s}
+.back-link:hover{color:#0d635c}
+.credit-tag{font-size:12px;color:#64748b;font-weight:500}
+
+/* Header */
+.header{text-align:center;margin-bottom:24px}
+.header h1{font-size:28px;font-weight:700;color:#1e293b;letter-spacing:-.3px}
+.subtitle{font-size:14px;color:#64748b;margin-top:6px}
+
+/* ---- Step Indicators ---- */
+.step-indicators{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:24px}
+.step-dot{display:flex;flex-direction:column;align-items:center;gap:4px}
+.step-dot span{width:36px;height:36px;line-height:36px;text-align:center;font-size:14px;font-weight:700;color:#94a3b8;background:#e2e8f0;border-radius:50%;transition:background .3s,color .3s}
+.step-dot small{font-size:11px;color:#94a3b8;font-weight:500;transition:color .3s}
+.step-dot.active span{background:#0f766e;color:#fff}
+.step-dot.active small{color:#0f766e}
+.step-dot.done span{background:#16a34a;color:#fff}
+.step-dot.done small{color:#16a34a}
+.step-line{width:48px;height:3px;background:#e2e8f0;border-radius:2px;margin:0 8px;margin-bottom:18px;transition:background .3s}
+.step-line.active{background:#0f766e}
+
+/* ---- Form Card ---- */
+.form-card{background:#fff;border:1px solid #d8dee4;border-radius:14px;padding:32px 28px;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+
+/* Step panels */
+.step-panel{display:none}
+.step-panel.active{display:block}
+.step-title{font-size:18px;font-weight:700;color:#1e293b;margin-bottom:20px}
+
+/* Form Group */
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:14px;font-weight:600;color:#1e293b;margin-bottom:6px}
+.char-info{font-weight:400;color:#94a3b8;font-size:12px}
+
+.input-wrap{position:relative}
+.input-wrap input{width:100%;padding:12px 40px 12px 14px;font-size:15px;border:1px solid #cbd5e1;border-radius:10px;background:#fff;color:#1e293b;outline:none;transition:border-color .2s,box-shadow .2s}
+.input-wrap input:focus{border-color:#0f766e;box-shadow:0 0 0 3px rgba(15,118,110,.12)}
+.input-wrap input::placeholder{color:#94a3b8}
+
+/* Field icon (✓ / ✗) */
+.field-icon{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:16px;font-weight:700;pointer-events:none;transition:color .2s}
+.icon-ok{color:#16a34a}
+.icon-err{color:#dc2626}
+
+/* Toggle password button */
+.toggle-pw{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;font-size:18px;cursor:pointer;color:#94a3b8;padding:2px 4px;line-height:1}
+
+/* Validation states */
+input.valid{border-color:#16a34a}
+input.valid:focus{box-shadow:0 0 0 3px rgba(22,163,74,.1)}
+input.invalid{border-color:#dc2626}
+input.invalid:focus{box-shadow:0 0 0 3px rgba(220,38,38,.1)}
+
+.error-msg{display:block;font-size:12px;color:#dc2626;margin-top:5px;min-height:16px}
+
+/* Strength bar */
+.strength-row{display:flex;align-items:center;gap:10px;margin-top:8px}
+.strength-track{flex:1;height:5px;background:#e2e8f0;border-radius:3px;overflow:hidden}
+.strength-fill{height:100%;width:0;border-radius:3px;transition:width .35s,background .35s}
+.strength-label{font-size:12px;font-weight:600;min-width:48px}
+
+/* Password rules checklist */
+.pw-rules{list-style:none;margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:4px 12px}
+.pw-rules li{font-size:12px;color:#94a3b8;padding-left:18px;position:relative;transition:color .25s}
+.pw-rules li::before{content:'○';position:absolute;left:0;font-size:11px}
+.pw-rules li.met{color:#16a34a}
+.pw-rules li.met::before{content:'●'}
+
+/* Textarea */
+textarea{width:100%;padding:12px 14px;font-size:15px;border:1px solid #cbd5e1;border-radius:10px;resize:vertical;outline:none;font-family:inherit;transition:border-color .2s;min-height:70px}
+textarea:focus{border-color:#0f766e;box-shadow:0 0 0 3px rgba(15,118,110,.12)}
+
+/* Checkbox */
+.checkbox-group{margin-top:4px}
+.checkbox-label{display:flex;align-items:center;gap:8px;font-size:14px;color:#475569;cursor:pointer}
+.checkbox-label input{width:18px;height:18px;accent-color:#0f766e;cursor:pointer}
+
+/* ---- Button Row ---- */
+.btn-row{display:flex;justify-content:space-between;align-items:center;margin-top:24px;gap:12px}
+
+.next-step-btn,.submit-btn{padding:12px 28px;font-size:15px;font-weight:600;color:#fff;background:#0f766e;border:none;border-radius:10px;cursor:pointer;transition:background .2s,transform .1s}
+.next-step-btn:hover,.submit-btn:hover{background:#0d635c}
+.next-step-btn:active,.submit-btn:active{transform:scale(.97)}
+
+.prev-step-btn{padding:12px 22px;font-size:14px;font-weight:500;color:#64748b;background:transparent;border:1px solid #cbd5e1;border-radius:10px;cursor:pointer;transition:border-color .2s,color .2s}
+.prev-step-btn:hover{border-color:#0f766e;color:#0f766e}
+
+/* ---- Success ---- */
+.success-message{text-align:center;padding:40px 20px}
+.success-icon{width:64px;height:64px;line-height:64px;font-size:30px;background:#16a34a;color:#fff;border-radius:50%;margin:0 auto 16px}
+.success-message h3{font-size:20px;font-weight:700;color:#1e293b;margin-bottom:6px}
+.success-message p{font-size:14px;color:#64748b;margin-bottom:20px}
+.reset-btn{padding:10px 24px;font-size:14px;font-weight:600;color:#0f766e;background:transparent;border:1px solid #0f766e;border-radius:8px;cursor:pointer;transition:background .2s,color .2s}
+.reset-btn:hover{background:#0f766e;color:#fff}
+
+/* ---- Footer ---- */
+.page-footer{width:100%;max-width:560px;text-align:center;padding:20px 4px 0;margin-top:32px;border-top:1px solid #d8dee4}
+.page-footer p{font-size:12px;color:#64748b}
+.page-footer strong{color:#1e293b}
+
+/* Responsive */
+@media(max-width:480px){
+    .form-card{padding:24px 18px}
+    .header h1{font-size:24px}
+    .pw-rules{grid-template-columns:1fr}
+    .btn-row{flex-direction:column}
+    .prev-step-btn,.next-step-btn,.submit-btn{width:100%}
+}

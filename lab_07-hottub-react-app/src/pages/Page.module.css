@@ -1,0 +1,27 @@
+.page {
+  padding: 1.4rem 0 2.2rem;
+}
+
+.head {
+  margin-bottom: 1rem;
+}
+
+.card {
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  background: var(--clr-white);
+  box-shadow: var(--shadow-soft);
+  padding: 1rem;
+}
+
+.gridTwo {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 800px) {
+  .gridTwo {
+    grid-template-columns: 1fr;
+  }
+}

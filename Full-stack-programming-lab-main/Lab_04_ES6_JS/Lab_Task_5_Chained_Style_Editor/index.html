@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5 – Chained Style Editor</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <nav class="top-bar">
+        <a href="../index.html" class="back-link">&larr; Dashboard</a>
+        <span class="credit-tag">M Ehtisham Amjad | BSSE-VI-B</span>
+    </nav>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Chained Style Editor</h1>
+            <p class="subtitle">Apply multiple styles simultaneously using jQuery chaining</p>
+        </header>
+
+        <!-- Preview Block -->
+        <div class="preview-card">
+            <p id="previewText" class="preview-text">
+                This is a sample text block. Use the controls below to change its appearance in real time. jQuery chaining allows multiple style changes to be applied simultaneously with clean, efficient code.
+            </p>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls-card">
+            <h3 class="controls-title">Style Controls</h3>
+
+            <!-- Font Size -->
+            <div class="control-group">
+                <label>Font Size</label>
+                <div class="btn-row">
+                    <button class="ctrl-btn" id="sizeSmall">Small</button>
+                    <button class="ctrl-btn active" id="sizeMedium">Medium</button>
+                    <button class="ctrl-btn" id="sizeLarge">Large</button>
+                    <button class="ctrl-btn" id="sizeXLarge">X-Large</button>
+                </div>
+            </div>
+
+            <!-- Text Color -->
+            <div class="control-group">
+                <label>Text Color</label>
+                <div class="btn-row">
+                    <button class="ctrl-btn color-swatch" data-color="#1d1d1f" style="background:#1d1d1f; color:#fff;">Dark</button>
+                    <button class="ctrl-btn color-swatch" data-color="#0071e3" style="background:#0071e3; color:#fff;">Blue</button>
+                    <button class="ctrl-btn color-swatch" data-color="#34c759" style="background:#34c759; color:#fff;">Green</button>
+                    <button class="ctrl-btn color-swatch" data-color="#ff3b30" style="background:#ff3b30; color:#fff;">Red</button>
+                    <button class="ctrl-btn color-swatch" data-color="#8e8e93" style="background:#8e8e93; color:#fff;">Grey</button>
+                </div>
+            </div>
+
+            <!-- Background Color -->
+            <div class="control-group">
+                <label>Background Color</label>
+                <div class="btn-row">
+                    <button class="ctrl-btn bg-swatch" data-bg="#ffffff">White</button>
+                    <button class="ctrl-btn bg-swatch" data-bg="#f5f5f7">Light</button>
+                    <button class="ctrl-btn bg-swatch" data-bg="#1d1d1f" style="background:#1d1d1f; color:#fff;">Dark</button>
+                    <button class="ctrl-btn bg-swatch" data-bg="#f0f5ff">Blue Tint</button>
+                    <button class="ctrl-btn bg-swatch" data-bg="#fff8e1">Warm</button>
+                </div>
+            </div>
+
+            <!-- Text Style Toggles -->
+            <div class="control-group">
+                <label>Text Style</label>
+                <div class="btn-row">
+                    <button class="ctrl-btn toggle-btn" id="boldToggle"><strong>Bold</strong></button>
+                    <button class="ctrl-btn toggle-btn" id="italicToggle"><em>Italic</em></button>
+                </div>
+            </div>
+
+            <!-- Reset -->
+            <div class="control-group">
+                <button class="reset-btn" id="resetBtn">Reset All Styles</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Credits Footer -->
+    <footer class="page-footer">
+        <p>&copy; 2026 <strong>M Ehtisham Amjad</strong> | Full Stack Programming | BSSE-VI-B (231996) | Air University</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

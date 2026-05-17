@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --surface: #ffffff;
+  --surface-2: #eef2ff;
+  --brand: #0a66c2;
+  --brand-2: #6366f1;
+  --accent: #10b981;
+  --muted: #64748b;
+  --ring: rgba(10, 102, 194, 0.25);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-brand: var(--brand);
+  --color-brand-2: var(--brand-2);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-poppins);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+body {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(99, 102, 241, 0.08), transparent 28%),
+    radial-gradient(circle at 85% 10%, rgba(16, 185, 129, 0.08), transparent 26%),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins), sans-serif;
+}
+
+* {
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
+::selection {
+  background: rgba(10, 102, 194, 0.2);
+}
+
+.container-shell {
+  margin-inline: auto;
+  width: min(1120px, 92%);
+}
+
+.section-pad {
+  padding-block: 4.5rem;
+}
+
+.soft-card {
+  background: var(--surface);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.brand-gradient {
+  background-image: linear-gradient(135deg, var(--brand), var(--brand-2));
+}
+
+.text-gradient {
+  background-image: linear-gradient(135deg, var(--brand), var(--brand-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.focus-ring:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .section-pad {
+    padding-block: 3.25rem;
+  }
+}

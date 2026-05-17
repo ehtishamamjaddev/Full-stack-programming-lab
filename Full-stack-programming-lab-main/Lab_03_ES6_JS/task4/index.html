@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 4 — Unique Course Registration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/global.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header class="page-header">
+      <h1>Task 4 — Unique Course Registration</h1>
+      <a href="../index.html">← Back to Home</a>
+    </header>
+
+    <div class="card register-section">
+      <h2 class="section-label">Register a Course</h2>
+      <div class="input-row">
+        <input type="text" id="courseInput" placeholder="Enter course name…" />
+        <button class="btn" id="registerBtn">Register</button>
+      </div>
+    </div>
+
+    <div id="toast-area"></div>
+
+    <div class="count-row">
+      <span>Registered Courses</span>
+      <span class="badge badge-accent" id="courseCount">0</span>
+    </div>
+
+    <div id="courses-container" class="chip-grid"></div>
+
+    <footer class="page-footer">
+      M Ehtisham Amjad | Roll No: 231996 | BSSE-VI-B | Full Stack Programming | Instructor: Sir Shareef Hussain
+    </footer>
+  </div>
+</body>
+</html>

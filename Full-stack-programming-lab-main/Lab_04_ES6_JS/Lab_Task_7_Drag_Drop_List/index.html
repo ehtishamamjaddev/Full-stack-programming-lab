@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7 – Drag and Drop Sortable List</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <nav class="top-bar">
+        <a href="../index.html" class="back-link">&larr; Dashboard</a>
+        <span class="credit-tag">M Ehtisham Amjad | BSSE-VI-B</span>
+    </nav>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Drag &amp; Drop Sortable List</h1>
+            <p class="subtitle">Reorder items by dragging them to a new position</p>
+        </header>
+
+        <div class="content-grid">
+            <!-- Sortable List -->
+            <div class="list-card">
+                <h3 class="card-title">Task List</h3>
+                <ul id="sortableList" class="sortable-list">
+                    <li class="sortable-item" data-id="1">
+                        <span class="drag-handle">&#9776;</span>
+                        <span class="item-label">Ehtisham – Design homepage layout</span>
+                    </li>
+                    <li class="sortable-item" data-id="2">
+                        <span class="drag-handle">&#9776;</span>
+                        <span class="item-label">Izah – Set up project repository</span>
+                    </li>
+                    <li class="sortable-item" data-id="3">
+                        <span class="drag-handle">&#9776;</span>
+                        <span class="item-label">Usman – Implement user authentication</span>
+                    </li>
+                    <li class="sortable-item" data-id="4">
+                        <span class="drag-handle">&#9776;</span>
+                        <span class="item-label">Shareef – Write unit tests</span>
+                    </li>
+                    <li class="sortable-item" data-id="5">
+                        <span class="drag-handle">&#9776;</span>
+                        <span class="item-label">Hussain – Deploy to production</span>
+                    </li>
+                    <li class="sortable-item" data-id="6">
+                        <span class="drag-handle">&#9776;</span>
+                        <span class="item-label">Ehtisham – Create API documentation</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Current Order Display -->
+            <div class="order-card">
+                <h3 class="card-title">Current Order</h3>
+                <ol id="orderDisplay" class="order-list"></ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Credits Footer -->
+    <footer class="page-footer">
+        <p>&copy; 2026 <strong>M Ehtisham Amjad</strong> | Full Stack Programming | BSSE-VI-B (231996) | Air University</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

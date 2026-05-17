@@ -1,0 +1,7 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#EEF2FF"/>
+  <rect x="255" y="120" width="290" height="360" rx="40" fill="#0A66C2"/>
+  <rect x="300" y="180" width="200" height="140" rx="24" fill="#93C5FD"/>
+  <rect x="340" y="70" width="120" height="90" rx="40" stroke="#0F172A" stroke-width="16"/>
+  <text x="400" y="540" text-anchor="middle" fill="#1E293B" font-size="36" font-family="Arial">Premium Backpack</text>
+</svg>

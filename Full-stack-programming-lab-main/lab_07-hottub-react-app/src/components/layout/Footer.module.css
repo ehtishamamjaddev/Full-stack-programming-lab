@@ -1,0 +1,87 @@
+.footer {
+  margin-top: 2rem;
+  background: linear-gradient(120deg, var(--clr-navy), #112846);
+  color: #d4deea;
+}
+
+.wrap {
+  min-height: 90px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.topRow {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.title {
+  margin: 0;
+  font-weight: 600;
+  color: #f3f7ff;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: #d8e3f3;
+}
+
+.meta span {
+  white-space: nowrap;
+}
+
+.creditsRow {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-top: 1px solid rgba(212, 222, 234, 0.24);
+  padding-top: 0.65rem;
+}
+
+.creditsLabel {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.creditsText {
+  margin: 0;
+  color: #d8e3f3;
+}
+
+.wrap p {
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .wrap {
+    gap: 0.6rem;
+    padding: 0.8rem 0;
+    text-align: center;
+  }
+
+  .topRow {
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .meta {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .creditsRow {
+    flex-direction: column;
+    gap: 0.35rem;
+    padding-top: 0.55rem;
+  }
+}

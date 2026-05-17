@@ -1,0 +1,20 @@
+{
+  "name": "lab-10-node-express",
+  "version": "1.0.0",
+  "description": "Lab 10 — Node.js + Express.js for Full Stack Programming",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "lab",
+    "air-university"
+  ],
+  "author": "M Ehtisham Amjad",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

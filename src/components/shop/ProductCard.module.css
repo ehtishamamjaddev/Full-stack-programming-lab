@@ -1,0 +1,80 @@
+.card {
+  background: #fff;
+  border: 1px solid var(--clr-border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+}
+
+.cover {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.heart {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid var(--clr-border);
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--clr-navy);
+}
+
+.hearted {
+  background: var(--clr-gold-soft);
+  color: #9a6f12;
+}
+
+.body {
+  padding: 0.9rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+  align-items: baseline;
+}
+
+.row h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.price {
+  margin: 0;
+  font-weight: 700;
+  color: var(--clr-navy);
+}
+
+.copy {
+  margin: 0.5rem 0;
+  color: var(--clr-muted);
+  font-size: 0.95rem;
+}
+
+.meta {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #55677c;
+  font-size: 0.88rem;
+}
+
+.actions {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detailLink {
+  color: var(--clr-blue);
+  font-weight: 600;
+}

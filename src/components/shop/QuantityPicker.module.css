@@ -1,0 +1,23 @@
+.wrap {
+  display: inline-flex;
+  border: 1px solid var(--clr-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.wrap button {
+  border: none;
+  width: 34px;
+  height: 34px;
+  background: #f8fbff;
+  color: var(--clr-navy);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.wrap span {
+  min-width: 32px;
+  display: inline-grid;
+  place-items: center;
+  font-weight: 600;
+}
